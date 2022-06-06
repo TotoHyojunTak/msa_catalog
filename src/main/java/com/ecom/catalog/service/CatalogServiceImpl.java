@@ -2,8 +2,10 @@ package com.ecom.catalog.service;
 
 import com.ecom.catalog.jpa.CatalogEntity;
 import com.ecom.catalog.jpa.CatalogRepository;
+import com.netflix.discovery.converters.Auto;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,6 +15,7 @@ public class CatalogServiceImpl implements CatalogService {
 
     CatalogRepository catalogRepository;
 
+    @Autowired
     public CatalogServiceImpl(CatalogRepository catalogRepository) {
         this.catalogRepository = catalogRepository;
     }
