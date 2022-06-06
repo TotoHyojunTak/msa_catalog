@@ -11,11 +11,12 @@ spring:
     password: ENC(qj1VNpOdtRQDI5WWj4x/DKH8A68uYxvL)
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
         #show_sql: true
         format_sql: true
+    defer-datasource-initialization: true
 
 # h2
 #  datasource:
@@ -37,10 +38,11 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
-greeting:
-  message: Welcome to the Simple Catalog Service
-
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
     password: A421080gsm
+
+logging:
+  level:
+    com.ecom.catalogservice: DEBUG
